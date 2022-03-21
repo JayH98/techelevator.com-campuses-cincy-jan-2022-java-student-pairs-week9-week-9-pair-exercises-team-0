@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+
+<style>
+    input[type="color"] {
+        width: 275px;
+        height: 30px;
+    }
+
+    select {
+        width: 275px;
+        height: 30px;
+    }
+
+    input[type="text"] {
+        width: 267px;
+        height: 25px;
+    }
+
+    input[type="submit"] {
+        color: white;
+        background-color: #00afef;
+        border-radius: 5px;
+        width: 100px;
+    }
+
+    html {
+        background-color: #00afef;
+    }
+
+    body {
+        /* background-color: white; */
+        /* display: grid;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 5px;
+        grid-template-rows: 200px; */
+
+    }
+
+    .solid {
+        border: none;
+    }
+
+    footer {
+        display: grid;
+        padding: 20px;
+        grid-area: footer;
+        /* margin: 20px; */
+        border-radius: 5px;
+        background-color: white;
+        height: 20%;
+    }
+
+    body.container {
+        display: grid;
+        grid-template-areas: 
+        "main"
+        "footer";
+        gap: 5px;
+        /* height: 100vh; */
+        align-items: center;
+    }
+
+    main {
+        grid-area: main;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        height: 92%;
+    }
+
+    /* footer {
+        grid-area: footer;
+        display: grid;
+        background-color: white;
+    } */
+
+    @media only screen and (max-width: 800px) {
+    body.container {
+        grid-template-areas:
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+
+    }
+}
+
+</style>
+
+<body class="container">
+    <main class="main">
+    <form action="http://www.example.com" method="post">
+            <h2>Contact Us</h2>
+            <div>
+                <label for="name">Name: </label> <br />
+                <input type="text" name="name" id="name" required />
+            </div><br />
+            <div>
+                <label for="hearAboutUs">How did you hear about us?</label> <br />
+                <select name="hearAboutUs" id="hearAboutUs" required>
+                    <option value="google">Google</option>
+                    <option value="bing">Bing</option>
+                    <option value="firebox">Firefox</option>
+                </select>
+            </div><br />
+            <div>
+                <label for="color">What color is your favorite popsicle?</label> <br />
+                <input type="color" name="color" id="color" size="35" required />
+            </div><br />
+            <div>
+                <label for="comments">Please let us know any comments you have:</label> <br />
+                <textarea name="comments" id="comments" rows="10" cols="50"></textarea>
+            </div>
+            <input type="submit" class="solid" value="Submit" />
+
+    </main>
+                <footer>
+                <div>© Tech Elevator 2020</div>
+            </footer>
+    </form>
+</body>
+
