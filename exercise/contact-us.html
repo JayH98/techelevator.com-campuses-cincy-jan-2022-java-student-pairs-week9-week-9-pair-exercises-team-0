@@ -35,7 +35,7 @@
 
     html {
         background-color: #87CEEB;
-        height: 100vh;
+        max-height: 100vh;
     }
 
     body {
@@ -64,13 +64,17 @@
 
     body.container {
         display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 0.05fr;
         grid-template-areas: 
         "header"
         "main"
         "footer";
         gap: 5px;
         /* height: 100vh; */
+        /* min-height: 100%; */
         align-items: center;
+        
     }
 
     main {
