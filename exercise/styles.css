@@ -1,6 +1,16 @@
 body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr 2fr 0.5fr;
+    grid-template-areas:
+        "header header"
+        "main-content main-content"
+        "race store"
+        "footer footer";
     font-family: Arial, Helvetica, sans-serif;
     background-color: #87CEEB;
+    row-gap: 5px;
+    column-gap: 5px;
 }
 
 nav ul {
@@ -35,6 +45,7 @@ nav ul li {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "headline buttons";
+    grid-area: header;
 }
 
 header img {
@@ -46,24 +57,31 @@ header h1 {
     padding-top: 10px;
 }
 
-#main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "picture content";
+#main-flexbox {
+    display: flex;
+    grid-area: main-content;
 }
 
-#picture-section {
-    background-color: purple;
-    display: grid;
-    grid-area: picture;
+#popsicle-race-section {
+    display: flex;
+    text-align: center;
+    grid-area: race;
 }
+
+#te-popsicles-store {
+    display: flex;
+    text-align: center;
+    grid-area: store;
+}
+
+footer {
+    grid-area: footer;
+}
+
 
 #did-you-know-section {
-    background-color: pink;
-    display: grid;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     justify-content: flex-start;
     grid-area: content;
 }
@@ -72,7 +90,7 @@ main img {
     object-fit: cover;
     margin-right: 20px;
     height: 350px;
-    width: 100%;
+    width: 35%;
     grid-area: picture;
 }
 
@@ -103,6 +121,7 @@ main, section, footer {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    border: none;
 }
 
 .store-button { /* used for store link in "Get refreshed" section */
@@ -114,4 +133,18 @@ main, section, footer {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    border: none;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        grid-template-areas:
+            "header"
+            "main-content"
+            "race"
+            "store"
+            "footer";
+        grid-template-columns: 1fr;
+
+    }
 }
