@@ -17,6 +17,26 @@ nav ul li {
     line-height: 50px;
 }
 
+#picture-and-title {
+    display: flex;
+    grid-area: headline;
+}
+
+#header-buttons {
+    display: flex;
+    grid-area: buttons;
+    justify-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "headline buttons";
+}
+
 header img {
     height: 100px;
     width: auto;
@@ -26,11 +46,34 @@ header h1 {
     padding-top: 10px;
 }
 
+#main-flexbox {
+    display: flex;
+}
+
+#picture-section {
+    display: flex;
+    flex-basis: 60%;
+}
+
+#did-you-know-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
 main img {
     object-fit: cover;
     margin-right: 20px;
     height: 350px;
     width: 35%;
+    grid-area: picture;
+}
+
+main li {
+    list-style-type: none;
+    grid-area: list;
 }
 
 main li:before {
@@ -43,6 +86,18 @@ main, section, footer {
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
+}
+
+.header-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    justify-content: flex-end;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .store-button { /* used for store link in "Get refreshed" section */
