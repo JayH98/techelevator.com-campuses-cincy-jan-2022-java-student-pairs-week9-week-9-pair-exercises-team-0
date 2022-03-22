@@ -138,13 +138,62 @@ main, section, footer {
 
 @media only screen and (max-width: 800px) {
     body {
+        grid-template-columns: 1fr;
         grid-template-areas:
             "header"
             "main-content"
             "race"
             "store"
             "footer";
+    }
+    
+    #header-grid {
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr;
+        grid-template-areas: 
+            "headline"
+            "buttons";
+        grid-area: header;
+}
+    #header-buttons {
+    display: flex;
+    grid-area: buttons;
+    justify-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    #main-flexbox {
+        display: flex;
+        flex-direction: column;
+        grid-area: main-content;
 
     }
+    main img {
+        flex-basis: 30%;
+        flex-grow: 1;
+        object-fit: cover;
+        margin-right: 20px;
+        height: 350px;
+        width: 100%;
+        
+    }
+
+    #popsicle-race-section > img{
+        flex-basis: 50%;
+        width: 100%;
+        height: 70%;
+    }
+    #popsicle-race-content > h2 {
+        flex-basis: 50%;
+        align-items: flex-start;
+        justify-items: center;
+    }
+    #popsicle-race-content > p {
+        align-items: baseline;
+    }
+
+
+
+
 }
